@@ -8,7 +8,7 @@
 
 // Input/Output
 // [input] string str
-// A string consists of lowercase latin letters, digits and symbols.
+// A string consists of lowercase laCreate a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.tin letters, digits and symbols.
 
 // [output] a string
 
