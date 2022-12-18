@@ -11,5 +11,4 @@ function reverseWords(str) {
       reverse.push(array[i].split("").reverse().join(""))
     }
      return reverse.join(" ")
-    
-   }
+   }  
