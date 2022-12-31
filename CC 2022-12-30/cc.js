@@ -14,7 +14,7 @@
 function vowelIndices(word){
     let splitWord = word.toLowerCase().split("")
     let result = []
-    let vowels = ["a", "e", "i", "o", "u", "y"]
+    let vowels = ["a", "e", "i", "o", "cu", "y"]
     for (let i = 0; i < splitWord.length; i++){
       if (vowels.includes(splitWord[i])){
         result.push(i+1)
