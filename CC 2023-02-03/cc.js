@@ -14,4 +14,3 @@ function sumCubes(n){
    }
     return result
   }
-
