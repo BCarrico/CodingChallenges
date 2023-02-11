@@ -1,11 +1,11 @@
 # CodeWars Challenges: <a target="_blank" href="https://www.codewars.com/users/BCarrico" >Visit Here</a> 
 
-A repository filled with codewars challenges (kata). Completed over 175+ challenges and push solutions every single day.
+A repository filled with codewars challenges (kata). Currently in the top 15% globally with over 175+ challenges completed. 
 
 ## How It's Made:
 
 **Tech used:** <img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript"/>
- 
+ Pushing a challenge every single day!
 
 ## Optimizations
 
