@@ -27,57 +27,70 @@ function isPangram(string){
       }
     }
   
-    import { useState } from 'react';
 
-function Square({ value, onSquareClick }) {
-  return (
-    <button className="square" onClick={onSquareClick}>
-      {value}
-    </button>
-  );
+//React is "A JavaScript library for building user interfaces". It's become a popular option amongst JavaScript frameworks and now it's supported in Codewars!
+
+// For this first React Kata, we'll be exploring how to create elements with React. React has a high level method React.createElement for exactly this purpose. It's usage is as simple as:
+
+// React.createElement('div', { prop: 'value' }, 'Hello world!'); 
+// Where the first argument is the element tag, the second argument is the element's properties and the third tag is the content you want to add into the element.
+
+// Your task is to create two wrapper methods called createElement and createUnorderedList for our own purposes.
+
+// The createElement method should take in a content, tag, and properties, similar to the React method. We should be able to call this method with just content like createElement('Hello World') and by default it should create a div with the content "Hello World".
+
+// The createUnorderedList method should take in list, which is an array strings and create a ul element, whose children are li elements containing the values from the list. Given an array ['apples', 'oranges', 'bananas'], the createUnorderedList method should return a react element with this heirarchy:
+
+// <ul>
+//   <li>apples</li>
+//   <li>oranges</li>
+//   <li>bananas</li>
+// </ul>
+// Also, React suggests that you always supply a key property when creating dynamic children so be sure to create a unique key for each child li created.
+
+// For more general information about React check out the docs!
+
+var React = require("react");
+
+function createElement(content, tag='div', props={}) {
+  return React.createElement(tag, props, content);
 }
 
-function Board({ xIsNext, squares, onPlay }) {
-  function handleClick(i) {
-    if (calculateWinner(squares) || squares[i]) {
-      return;
-    }
-    const nextSquares = squares.slice();
-    if (xIsNext) {
-      nextSquares[i] = 'X';
-    } else {
-      nextSquares[i] = 'O';
-    }
-    onPlay(nextSquares);
-  }
-
-  const winner = calculateWinner(squares);
-  let status;
-  if (winner) {
-    status = 'Winner: ' + winner;
-  } else {
-    status = 'Next player: ' + (xIsNext ? 'X' : 'O');
-  }
-
-  return (
-    <>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-        <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-        <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-        <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-        <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
-      </div>
-      <div className="board-row">
-        <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-        <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-        <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
-      </div>
-    </>
-  );
+function createUnorderedList(list) {
+  return React.createElement('ul', {}, list.map((str, i) => React.createElement('li', {key : +i}, str)));
 }
 
+// United State of React
+// Some say The United States has never been so divided. This Kata is a chance for you to unite a once great nation and MAKE AMERICA CODE AGAIN!
+
+// What's Involved
+// State
+// Changing State
+// Conditional Rendering based on state
+// The challenge
+// You will be given a component called States. You will need to establish an initial state for the component called united and for it to be set to false.
+
+// Then write a unite function that changes this state to true.
+
+// Then conditionally render a bespoke message in the component.
+
+// If the States are united then display "Code for everyone"
+
+// If the States aren't united then display "Make America code again"
+
+import React from 'react';
+
+export class States extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      united: false
+    }
+  }
+  unite (){
+    this.setState({united: !this.state.check})
+  }
+  render() {
+    return <div className="status">{this.state.united ? "Code for everyone" : "Make America code again"}</div>
+  } 
+}
