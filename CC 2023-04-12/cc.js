@@ -1,17 +1,13 @@
-// You and a friend have decided to play a game to drill your statistical intuitions. The game works like this:
+// We need to write some code to return the original price of a product, the return type must be of type decimal and the number must be rounded to two decimal places.
 
-// You have a bunch of red and blue marbles. To start the game you grab a handful of marbles of each color and put them into the bag, keeping track of how many of each color go in. You take turns reaching into the bag, guessing a color, and then pulling one marble out. You get a point if you guessed correctly. The trick is you only have three seconds to make your guess, so you have to think quickly.
+// We will be given the sale price (discounted price), and the sale percentage, our job is to figure out the original price.
 
-// You've decided to write a function, guessBlue() to help automatically calculate whether you should guess "blue" or "red". The function should take four arguments:
+// For example:
+// Given an item at $75 sale price after applying a 25% discount, the function should return the original price of that item before applying the sale percentage, which is ($100.00) of course, rounded to two decimal places.
 
-// the number of blue marbles you put in the bag to start
-// the number of red marbles you put in the bag to start
-// the number of blue marbles pulled out so far (always lower than the starting number of blue marbles)
-// the number of red marbles pulled out so far (always lower than the starting number of red marbles)
-// guessBlue() should return the probability of drawing a blue marble, expressed as a float. For example, guessBlue(5, 5, 2, 3) should return 0.6.
+// DiscoverOriginalPrice(75, 25) => 100.00M where 75 is the sale price (discounted price), 25 is the sale percentage and 100 is the original price
 
-function guessBlue(blueStart, redStart, bluePulled, redPulled) {
-    let blueLeft = blueStart - bluePulled
-    let redLeft = redStart - redPulled
-    return blueLeft / (blueLeft + redLeft)
+function discoverOriginalPrice(discountedPrice, salePercentage){
+  let price = discountedPrice/(1-(salePercentage/100))
+  return Number(price.toFixed(2))
   }
